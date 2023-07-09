@@ -10,9 +10,6 @@ const Users = () => {
     try {
       const users = await fetchUsersfromAPI(); // Fetch user data from the API
       setUserData(users); // Update the user data state
-      // setTimeout(() => {
-      //   setLoading(false); // Set loading to false after a delay
-      // }, 1000); // Delay in milliseconds (e.g., 1000ms = 1 second)
 
       setTimeout(() => {
         setLoading(false); // Set loading to false after a delay
@@ -25,7 +22,7 @@ const Users = () => {
 
   useEffect(() => {
     setUserData([]); // Clear the user data when the component mounts or reloads
-  }, []);
+  }, []);  // Empty dependency array ensures the effect runs only once on mount
 
   return (
     <div>
